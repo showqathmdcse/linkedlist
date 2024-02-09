@@ -1,0 +1,50 @@
+import java.util.*;
+class Main{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        Main list=new Main();
+        list.insertAtBeg(4);
+        list.insertAtBeg(23);
+        list.insertAtBeg(45);
+        list.insertAtBeg(2);
+        list.display();
+        
+       
+        
+    }
+    Node head;
+    class Node{
+        int data;
+        Node next;  
+    Node(int data)
+    {
+        this.data=data;
+        this.next=null;
+    }
+}
+    Main()
+    {
+        head=null;
+    }
+    public void insertAtBeg(int val)
+    {
+        Node newNode= new Node(val);
+        if(head==null)
+           head=newNode;
+        else{
+            newNode.next=head;
+            head=newNode;
+            
+        }   
+    }
+    public void display()
+    {
+        Node temp=head;
+        while(temp!=null)
+        {
+            System.out.print(temp.data + " ");
+            temp=temp.next;
+        }
+    }
+}
